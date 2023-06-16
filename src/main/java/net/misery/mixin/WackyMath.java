@@ -15,7 +15,7 @@ public abstract class WackyMath {
     // Default value: sineTable[i] = (float)Math.sin((double)i * Math.PI * 2.0 / 65536.0);
     private static final float[] SINE_TABLE = Util.make(new float[65536], sineTable -> {
         for (int i = 0; i < sineTable.length; ++i) {
-            sineTable[i] = (float)Math.sin((double)i * Math.PI * 2.0 / 65536.0);
+            sineTable[i] = (float)Math.sin((double)i * Math.PI * configsList.CUSTOM_FLOAT2_VALUE / configsList.CUSTOM_FLOAT_VALUE);
         }
     });
 
@@ -24,7 +24,6 @@ public abstract class WackyMath {
     @Inject(at = @At("RETURN"), method = "sin", cancellable = true)
     private static void sin(float value, CallbackInfoReturnable<Float> cir){
         cir.setReturnValue(SINE_TABLE[(int)(value * configsList.SIN_VALUE + configsList.COS_VALUE) & 0xFFFF]);
-        //cir.setReturnValue(SINE_TABLE[(int)(value * 10430.378f + 16384.0f) & 0xFFFF]);
     }
 
     // Changes cos to sin
