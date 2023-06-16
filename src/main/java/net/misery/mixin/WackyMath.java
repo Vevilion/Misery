@@ -12,10 +12,13 @@ import net.misery.confighandler.configsList;
 @Mixin(MathHelper.class)
 public abstract class WackyMath {
 
+    //public static double test = 500.0;
+
+    // Affects math for most things
     // Default value: sineTable[i] = (float)Math.sin((double)i * Math.PI * 2.0 / 65536.0);
     private static final float[] SINE_TABLE = Util.make(new float[65536], sineTable -> {
         for (int i = 0; i < sineTable.length; ++i) {
-            sineTable[i] = (float)Math.sin((double)i * Math.PI * configsList.CUSTOM_FLOAT2_VALUE / configsList.CUSTOM_FLOAT_VALUE);
+            sineTable[i] = (float)Math.sin((double)i * Math.PI * 2 / 500);
         }
     });
 

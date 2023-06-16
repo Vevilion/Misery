@@ -21,7 +21,6 @@ public class configMod implements SimpleConfig.DefaultConfig {
 
      public void addKeyValuePair(Pair<String, ?> keyValuePair, String comment) {
         configsList.add(keyValuePair);
-        // Modified by me: 
         configContents += "#" + comment + "\n" + keyValuePair.getFirst() + "=" + keyValuePair.getSecond() + "\n";
     }
         
