@@ -1,6 +1,8 @@
 package net.misery;
 
 import net.fabricmc.api.ModInitializer;
+import net.misery.confighandler.configsList;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,6 +13,7 @@ public class main implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        configsList.registerConfigs();
         LOGGER.info("The corruption spreads...");
     }
 }
