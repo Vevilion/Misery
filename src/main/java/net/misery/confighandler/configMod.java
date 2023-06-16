@@ -26,8 +26,6 @@ public class configMod implements SimpleConfig.DefaultConfig {
 
         configContents +=  "#" + comment + "\n" + keyValuePair.getFirst() + "=" + keyValuePair.getSecond() + "\n";
     }
-        
-
     
     @Override
     public String get(String namespace) {

@@ -1,6 +1,7 @@
 package net.misery.confighandler;
 /*
  * Copyright (c) 2021 magistermaks
+ * Modfied by Vevilion 2023
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -98,7 +99,7 @@ public class SimpleConfig {
      */
     public static ConfigRequest of( String filename ) {
         Path path = FabricLoader.getInstance().getConfigDir();
-        return new ConfigRequest( path.resolve( filename + ".properties" ).toFile(), filename );
+        return new ConfigRequest( path.resolve( filename + ".cfg" ).toFile(), filename );
     }
 
     private void createConfig() throws IOException {
