@@ -48,6 +48,6 @@ public abstract class WackyMath {
         if(configsList.DISABLE_MOD == false){
         cir.setReturnValue(MathHelper.wrapDegrees(start + end));
     }else{
-        cir.setReturnValue(end - start);}
+        cir.setReturnValue(MathHelper.wrapDegrees(end - start));}
     }
 }

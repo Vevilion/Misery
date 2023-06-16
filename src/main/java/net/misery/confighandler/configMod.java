@@ -11,7 +11,8 @@ import com.mojang.datafixers.util.Pair;
 
 public class configMod implements SimpleConfig.DefaultConfig {
     
-    private String configContents = "";
+    public String configContents = "";
+    public String configHeaderText = "";
 
     public List<Pair> getConfigsList() {
         return configsList;
@@ -21,12 +22,22 @@ public class configMod implements SimpleConfig.DefaultConfig {
 
      public void addKeyValuePair(Pair<String, ?> keyValuePair, String comment) {
         configsList.add(keyValuePair);
-        configContents += "#" + comment + "\n" + keyValuePair.getFirst() + "=" + keyValuePair.getSecond() + "\n";
+
+
+        configContents +=  "#" + comment + "\n" + keyValuePair.getFirst() + "=" + keyValuePair.getSecond() + "\n";
     }
         
+
     
     @Override
     public String get(String namespace) {
         return configContents;
+        
     }
+
+        /* 
+        "#DISCLAIMER: I'm not responsible for any damages this mod may cause to your game or your computer.\n" 
+            + "#When setting values, don't set them too high, keep them under 1 million.\n" 
+            + "#I don't know what happens if you set them too high, so be responsible.\n\n";
+        */
 }
